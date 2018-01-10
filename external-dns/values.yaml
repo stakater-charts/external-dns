@@ -1,0 +1,9 @@
+namespace: default
+externaldns:
+  image:
+    name: registry.opensource.zalan.do/teapot/external-dns
+    tag: v0.4.5
+    pullPolicy: IfNotPresent
+  config:
+    domainFilter: stakater.com
+    txtOwnerId: stakater
