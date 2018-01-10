@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "name" . }}
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+    spec:
+      containers:
+      - name: {{ template "name" . }}
+        image: "{{ .Values.externaldns.image.name }}:{{ .Values.externaldns.image.tag }}"
+        imagePullPolicy: {{ .Values.externaldns.image.pullPolicy }}
+        args:
+        - --source=ingress
+        - --domain-filter={{ .Values.externaldns.config.domainFilter }}
+        - --provider=aws
+        - --registry=txt
+        - --txt-owner-id={{ .Values.externaldns.config.txtOwnerId }}
+      serviceAccountName: {{ template "name" . }}
