@@ -1,5 +1,5 @@
-namespace: default
 externaldns:
+  namespace: default
   image:
     name: registry.opensource.zalan.do/teapot/external-dns
     tag: v0.4.5
