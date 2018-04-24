@@ -1,4 +1,8 @@
 externaldns:
+  labels:
+    group: com.stakater.platform
+    provider: stakater
+    version: 0.4.5
   namespace: default
   image:
     name: registry.opensource.zalan.do/teapot/external-dns
