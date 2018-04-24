@@ -2,13 +2,16 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "name" . }}
+  labels:
+{{ include "labels.stakater" . | indent 4 }}
+{{ include "labels.chart" . | indent 4 }}
 spec:
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: {{ template "name" . }}
+{{ include "labels.selector" . | indent 8 }}
     spec:
       containers:
       - name: {{ template "name" . }}
