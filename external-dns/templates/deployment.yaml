@@ -19,7 +19,9 @@ spec:
         imagePullPolicy: {{ .Values.externaldns.image.pullPolicy }}
         args:
         - --source=ingress
-        - --domain-filter={{ .Values.externaldns.config.domainFilter }}
+        {{- range .Values.externaldns.config.domainFilters }}
+        - --domain-filter={{ . }}
+        {{- end }}
         - --provider=aws
         - --registry=txt
         - --txt-owner-id={{ .Values.externaldns.config.txtOwnerId }}
