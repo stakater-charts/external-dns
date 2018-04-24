@@ -9,5 +9,7 @@ externaldns:
     tag: v0.4.5
     pullPolicy: IfNotPresent
   config:
-    domainFilter: stakater.com
+    domainFilters:
+    - stakater.com
+    - stackator.com
     txtOwnerId: stakater
