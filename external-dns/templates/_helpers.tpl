@@ -23,7 +23,7 @@ provider: {{ .Values.externaldns.labels.provider }}
 
 {{- define "labels.stakater" -}}
 {{ template "labels.selector" . }}
-version: {{ .Values.externaldns.labels.version | quote }}
+version: "{{ .Values.externaldns.labels.version }}"
 {{- end -}}
 
 {{- define "labels.chart" -}}
