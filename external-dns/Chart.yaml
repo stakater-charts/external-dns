@@ -7,7 +7,7 @@ keywords:
   - pvc
   - pv
   - kubernetes
-home: https://github.com/stakater/chart-external-dns
+home: https://github.com/stakater-charts/external-dns
 maintainers:
 - name: Stakater
   email: stakater@aurorasolutions.io
